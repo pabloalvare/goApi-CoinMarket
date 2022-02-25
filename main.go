@@ -18,7 +18,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	respBody, _ := ioutil.ReadAll(resp.Body)
-	fmt.Printf(string(respBody))
+	coin, err := GetCoin(string(respBody))
+	fmt.Println("acabobis", coin)
 
 }
